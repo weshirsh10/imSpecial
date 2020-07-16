@@ -1,0 +1,16 @@
+{
+    "colors": {
+        "primary":  "#725AC1",
+        "secondary": "#f7ece1",
+        "light": "#8d86c9",
+        "dark": "#242038"
+    },
+    "text": {
+        "headerText": {
+            "fontSize": 25,
+            "fontWeight": "bold",
+            "color": "#725AC1"
+        }
+    }
+    
+}
