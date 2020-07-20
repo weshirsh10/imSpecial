@@ -14,7 +14,7 @@ import {Button} from 'react-native-elements';
 
 const theme = require('../../theme.json');
 
-export default class Feed extends Component {
+export default class Splash extends Component {
   constructor() {
     super();
     this.state = {
@@ -28,13 +28,7 @@ export default class Feed extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <KeyboardAwareScrollView style={styles.container}>
-          <Text>Explore page</Text>
-          <Text>-Chat with someone based on their location</Text>
-          <Text>-Chat with someone based on their Sports</Text>
-          <Text>-News feed: see images and posts of friends</Text>
-          <Text>-Post an image</Text>
-          <Text>-Post a status</Text>
-
+          <Text>Splashington</Text>
         </KeyboardAwareScrollView>
       </SafeAreaView>
     );

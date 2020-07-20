@@ -28,9 +28,7 @@ import {
 // import Icon from 'react-native-vector-icons/MaterialIcons';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
-
 import createMainStack from './src/navigation/MainNavigation/mainNavigation';
-
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 Icon.loadFont();

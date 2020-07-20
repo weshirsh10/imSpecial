@@ -1,52 +1,72 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import {Avatar} from 'react-native-elements';
 import {
-  Avatar,
   Bubble,
   SystemMessage,
   Message,
   MessageText,
+  Time,
 } from 'react-native-gifted-chat';
 
 const theme = require('../../../theme.json');
 
-export const renderAvatar = props => (
-  <Avatar
-    {...props}
-    containerStyle={{left: {borderWidth: 3, borderColor: 'red'}, right: {}}}
-    imageStyle={{left: {borderWidth: 3, borderColor: 'blue'}, right: {}}}
-  />
-);
+export const renderAvatar = props => {
+  return (
+    <Avatar
+      rounded
+      overlayContainerStyle={{backgroundColor: theme.colors.light}}
+      title={props.currentMessage.user.name}
+    />
+  );
+};
 
-export const renderBubble = props => (
-  <Bubble
-    {...props}
-    // renderTime={() => <Text>Time</Text>}
-    // renderTicks={() => <Text>Ticks</Text>}
-    // containerStyle={{
-    //   left: {borderColor: 'teal', borderWidth: 8},
-    //   right: {},
-    // }}
-    // wrapperStyle={{
-    //   left: {borderColor: 'tomato', borderWidth: 4},
-    //   right: {},
-    // }}
-    // bottomContainerStyle={{
-    //   left: {borderColor: 'purple', borderWidth: 4},
-    //   right: {},
-    // }}
-    tickStyle={{}}
-    // usernameStyle={{color: 'tomato', fontWeight: '100'}}
-    // containerToNextStyle={{
-    //   left: {borderColor: 'navy', borderWidth: 4},
-    //   right: {},
-    // }}
-    // containerToPreviousStyle={{
-    //   left: {borderColor: 'mediumorchid', borderWidth: 4},
-    //   right: {},
-    // }}
-  />
-);
+export const renderTime = props => {
+  return (
+    <Time
+      {...props}
+      timeTextStyle={{
+        left: {color: theme.colors.dark},
+        right: {color: theme.colors.dark},
+      }}
+    />
+  );
+};
+
+export const renderBubble = props => {
+  return (
+    <Bubble
+      {...props}
+      renderCustomView={props => <Text>{props.currentMessage.user.name}</Text>}
+      // renderUsername={props => <Text>{props.currentMessage.name}</Text>}
+      // renderTime={props => <Time {...props} textStyle={{left: {color: 'red'}}} />}
+      // renderTicks={() => <Text>Ticks</Text>}
+      //   containerStyle={{
+      //     left: {backgroundColor: theme.colors.primary},
+      //     right: {},
+      //   }}
+      wrapperStyle={{
+        left: {backgroundColor: theme.colors.secondary},
+        right: {backgroundColor: theme.colors.secondary},
+      }}
+      // bottomContainerStyle={{
+      //   left: {borderColor: 'purple', borderWidth: 4},
+      //   right: {},
+      // }}
+      // tickStyle={{}}
+      usernameStyle={{color: 'blue', fontWeight: '100'}}
+      // containerToNextStyle={{
+      //   left: {borderColor: 'navy', borderWidth: 4},
+      //   right: {},
+      // }}
+      // containerToPreviousStyle={{
+      //   left: {borderColor: 'mediumorchid', borderWidth: 4},
+      //   right: {},
+      // }}
+      tickStyle={{left: {borderWidth: 5}}}
+    />
+  );
+};
 
 export const renderSystemMessage = props => (
   <SystemMessage
@@ -75,13 +95,18 @@ export const renderMessageText = props => (
       left: {
         backgroundColor: theme.colors.primary,
         borderRadius: 10,
-        borderwidth: 2,
-        borderColor: theme.colors.primary,
+        // borderWidth: 2,
+        // borderColor: theme.colors.primary,
       },
-      right: {backgroundColor: theme.colors.primary, borderRadius: 10},
+      right: {
+        backgroundColor: theme.colors.light,
+        borderRadius: 10,
+        // borderWidth: 2,
+        // borderColor: theme.colors.primary,
+      },
     }}
     textStyle={{
-      left: {color: theme.colors.dark},
+      left: {color: theme.colors.secondary},
       right: {color: theme.colors.secondary},
     }}
     linkStyle={{
@@ -92,12 +117,10 @@ export const renderMessageText = props => (
   />
 );
 
-export const renderCustomView = ({user}) => (
-  <View style={{minHeight: 20, alignItems: 'center'}}>
-    <Text>
-      Current user:
-      {user.name}
-    </Text>
-    <Text>From CustomView</Text>
-  </View>
-);
+export const renderCustomView = name => {
+  return (
+    <View style={{minHeight: 20, backgroundColor: theme.colors.secondary}}>
+      <Text style={{color: theme.colors.dark}}>{name}</Text>
+    </View>
+  );
+};

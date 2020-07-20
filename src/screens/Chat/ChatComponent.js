@@ -56,7 +56,7 @@ export default class ChatComponent extends Component {
           </Text>
         </View>
         <View style={styles.chatContainer}>
-          <GiftedChatComponent/>
+          <GiftedChatComponent user={this.props.route.params.name}/>
         </View>
       </SafeAreaView>
     );

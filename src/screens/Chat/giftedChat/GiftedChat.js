@@ -16,6 +16,7 @@ import {
   renderSystemMessage,
   renderMessage,
   renderMessageText,
+  renderTime,
   renderCustomView,
 } from './messageContainer';
 
@@ -37,11 +38,37 @@ export default class GiftedChatComponent extends React.Component {
       messages: [
         {
           _id: 1,
-          text: 'Hello developer',
-          createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
+          text: 'Message 2',
+          name: "idk",
+          createdAt: new Date(Date.UTC(2016, 7, 30, 17, 21, 0)),
           user: {
             _id: 2,
-            name: 'React Native',
+            name: 'p2',
+            text: 'whattap',
+            avatar: 'https://facebook.github.io/react/img/logo_og.png',
+          },
+        },
+        {
+          _id: 2,
+          text: 'Another Message',
+          name: "bigboi",
+          createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
+          user: {
+            _id: 3,
+            name: 'p3',
+            text: 'whattap',
+            avatar: 'https://facebook.github.io/react/img/logo_og.png',
+          },
+        },
+        {
+          _id: 3,
+          text: 'id4',
+          name: "ayyyooo",
+          createdAt: new Date(Date.UTC(2016, 7, 30, 17, 20, 0)),
+          user: {
+            _id: 4,
+            name: 'p4',
+            text: 'whattap',
             avatar: 'https://facebook.github.io/react/img/logo_og.png',
           },
         },
@@ -71,9 +98,12 @@ export default class GiftedChatComponent extends React.Component {
           renderComposer={renderComposer}
           renderAvatar={renderAvatar}
           renderBubble={renderBubble}
+          renderTime={renderTime.bind(this)}
           renderSystemMessage={renderSystemMessage}
           renderMessage={renderMessage}
           renderMessageText={renderMessageText}
+          // renderCustomView={renderCustomView}
+          renderBubble={renderBubble}
         />
       </View>
     );

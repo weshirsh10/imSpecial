@@ -11,14 +11,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {Input, Button} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 
-const theme = require('../../theme.json')
+const theme = require('../../theme.json');
 
 export default class LoginForm extends Component {
-  onPressSignUp = () => {
-    console.log('PResseing signup');
-    this.props.navigation.navigate('SignUp');
-  };
-
   render() {
     return (
       <View style={styles.container}>
@@ -36,7 +31,6 @@ export default class LoginForm extends Component {
           placeholderTextColor={theme.colors.light}
           leftIcon={<Icon name="lock" size={24} color="#F7ECE1" />}
         />
-        
       </View>
     );
   }
@@ -49,8 +43,8 @@ const styles = StyleSheet.create({
   input: {
     marginLeft: 5,
     color: theme.colors.secondary,
-  }, 
+  },
   inputContainer: {
-    borderColor: theme.colors.secondary
-  }
+    borderColor: theme.colors.secondary,
+  },
 });

@@ -11,7 +11,7 @@ export const renderInputToolbar = props => (
     containerStyle={{
       backgroundColor: theme.colors.secondary,
       paddingTop: 6,
-      paddingRight:10,
+      paddingRight: 10,
       borderTopColor: 'transparent',
     }}
     primaryStyle={{alignItems: 'center'}}
